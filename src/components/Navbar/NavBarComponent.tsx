@@ -71,7 +71,7 @@ export default function NavBarComponent() {
                             </NavbarItem>
                         ) : (
                             <NavbarItem isActive>
-                                <NavLink color="foreground" to="/purchaseDetail">
+                                <NavLink color="foreground" to="/purchaseDetail2">
                                     Mis ventas
                                 </NavLink>
                             </NavbarItem>
@@ -111,17 +111,21 @@ export default function NavBarComponent() {
                                         <p className="font-bold">Logueado como {user.tipo_usuario}</p>
                                         <p className="font-bold">{user.email}</p>
                                     </DropdownItem>
-                                    <DropdownItem key="settings" textValue="Configuraciones">
-                                        <NavLink to="/purchaseDetail" className="flex gap-2 items-center">
-                                            {
-                                                user.tipo_usuario === "comprador" ? (
-                                                    <span>Mis compras</span>
-                                                ) : (
-                                                    <span>Mis ventas</span>
-                                                )
-                                            }
-                                        </NavLink>
-                                    </DropdownItem>
+                                    {
+                                        user.tipo_usuario === "comprador" ? (
+                                            <DropdownItem key="settings" textValue="Configuraciones">
+                                                <NavLink to="/purchaseDetail2" className="flex gap-2 items-center">
+                                                    <span>Mis Compras</span>
+                                                </NavLink>
+                                            </DropdownItem>
+                                        ) : (
+                                            <DropdownItem key="settings" textValue="Configuraciones">
+                                                <NavLink to="/purchaseDetail2" className="flex gap-2 items-center">
+                                                    <span>Mis Ventas</span>
+                                                </NavLink>
+                                            </DropdownItem>
+                                        )
+                                    }
                                     <DropdownItem key="analytics" textValue="Analíticas">
                                         Analíticas
                                     </DropdownItem>

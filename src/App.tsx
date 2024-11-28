@@ -5,6 +5,7 @@ import Viviendas from "./pages/Viviendas"
 import Nosotros from "./pages/Nosotros"
 import PurchasePage from "./pages/PurchasePage"
 import PurchaseDetailPage from "./pages/PurchaseDetailPage"
+import PurchaseDetailPage2 from "./pages/PurchaseDetailPage2"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/nosotros" element={<Nosotros/>}/>
           <Route path="/purchase/:houseId"  element={<PurchasePage/>} />
           <Route path="/purchaseDetail" element={<PurchaseDetailPage/>}/>
+          <Route path="/purchaseDetail2" element={<PurchaseDetailPage2/>}/>
         </Routes>
       </main>
       <footer>

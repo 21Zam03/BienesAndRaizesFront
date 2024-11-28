@@ -92,9 +92,13 @@ const HouseModal: React.FC<HouseModalProps> = ({ id, nombre, precio, ubicacion, 
                                 </Button>
                                 {
                                     user != null ? (
-                                        <Button color="danger" fullWidth radius="full" onClick={buyHandle}>
-                                            Obtener
-                                        </Button>
+                                        user.tipo_usuario === "comprador" ? ( 
+                                            <Button color="danger" fullWidth radius="full" onClick={buyHandle}>
+                                                Obtener
+                                            </Button>
+                                        ) : (
+                                            <></>
+                                        )
                                     ) : (
                                         <></>
                                     )

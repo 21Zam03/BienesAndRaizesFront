@@ -1,9 +1,9 @@
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { CompraRespose } from "../types/PurchaseInterfaces";
-import { obtenerComprasService } from "../services/PurchaseService";
+import { obtenerVentasService } from "../services/PurchaseService";
 
-export default function PurchaseDetailPage() {
+export default function PurchaseDetailPage2() {
 
     const [loading, setLoading] = useState<boolean>(true);
     const [purchases, setPurchases] = useState<CompraRespose[]>([]);
@@ -11,7 +11,7 @@ export default function PurchaseDetailPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await obtenerComprasService();
+                const response = await obtenerVentasService();
                 console.log(response);
                 setPurchases(response);
             } catch (err: unknown) {
@@ -31,7 +31,7 @@ export default function PurchaseDetailPage() {
                 {
                     purchases.length > 0 ? (
                         <>
-                            <p className="text-center">MIS COMPRAS</p>
+                            <p className="text-center">MIS VENTAS</p>
                             <Table
                                 color="primary"
                                 selectionMode="single"
@@ -57,7 +57,7 @@ export default function PurchaseDetailPage() {
                             </Table>
                         </>
                     ) : (
-                        <p>No tienes ni una compra aun</p>
+                        <p>No tienes ni una venta aun</p>
                     )
                 }
             </div>
