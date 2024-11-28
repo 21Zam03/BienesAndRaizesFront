@@ -1,7 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import NavBarComponent from "./components/Navbar/NavBarComponent"
 import HomePage from "./pages/HomePage"
-import BienesRaizes from "./pages/BienesRaizes"
+import Viviendas from "./pages/Viviendas"
+import Nosotros from "./pages/Nosotros"
+import PurchasePage from "./pages/PurchasePage"
+import PurchaseDetailPage from "./pages/PurchaseDetailPage"
 
 function App() {
 
@@ -13,7 +16,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/bienes&raizes" element={<BienesRaizes/>}/>
+          <Route path="/viviendas" element={<Viviendas/>}/>
+          <Route path="/nosotros" element={<Nosotros/>}/>
+          <Route path="/purchase/:houseId"  element={<PurchasePage/>} />
+          <Route path="/purchaseDetail" element={<PurchaseDetailPage/>}/>
         </Routes>
       </main>
       <footer>
